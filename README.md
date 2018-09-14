@@ -40,7 +40,7 @@ The api folder contains the system backend services.
 - Create a virtual environment and activate it
     ```bash
      virtualenv venv
-     source /venv/bin/activate
+     source /env/bin/activate
     ```
 - Install dependencies 
     ```bash
