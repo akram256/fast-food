@@ -65,7 +65,7 @@ The api folder contains the system backend services.
 - To run the tests, run the following commands
 
 ```bash
-pytest --cov=api
+pytest --cov=.
 ```
 
 ## Built With
