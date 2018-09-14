@@ -57,20 +57,20 @@ class TestViews(unittest.TestCase):
         """
             Method for tesing the post function which updates an order
         """
-        result1 = self.client().post('api/v1/orders/1',
+        result1 = self.client().put('api/v1/orders/1',
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="Akram",
                                                          order=
                                                          "chips and chicken")))
-        result2 = self.client().post('api/v1/orders/1',
+        result2 = self.client().put('api/v1/orders/1',
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="sam",
                                                          order=
                                                          "chips and chicken")))
         respond = json.loads(result2.data.decode("utf8"))
-        self.assertIn('Update order', respond)
+        self.assertIn('Updated order', respond)
         self.assertIsInstance(respond, dict)
         self.assertEqual(result1.status_code, 200)
-        self.assertTrue(result1.json["Update order"])
+        self.assertTrue(result1.json["Updated order"])
         self.assertEqual(result2.status_code, 200)
-        self.assertTrue(result2.json["Update order"])
+        self.assertTrue(result2.json["Updated order"])
