@@ -1,0 +1,460 @@
+div.login-header{
+	overflow: auto;
+	padding: 5px 10px 15px 5px;
+}
+
+div.login-header div.left{
+	float: left;
+	color: blue;
+}
+
+a.signup-button{
+	border: 1px solid blue;
+	border-radius: 15px;
+	text-transform: lowercase;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 5px 10px;
+}
+
+a.login-button{
+	border: 1px solid blue;
+	border-radius: 15px;
+	text-transform: lowercase;
+	text-decoration: none;
+	font-size: 14px;
+	padding: 5px 10px;
+	color: white;	
+	background-color: blue;
+}
+
+div.login-header div.right {
+	float: right;
+}
+
+div.login-content{
+	background-color: #E7E8ED;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0%;
+	background-image: url("../images/cheddar.jpg");
+}
+
+div.login-section{
+	margin: 5% 35%;
+	width: 25%;
+	padding: 15px 5px;
+	border: 1px solid blue;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+div.login-section div.login-circle{
+	background-color: blue;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: 0px 40%;
+}
+
+div.login-section div.login-circle p{
+	margin: 0px 10px 10px 15px;
+	padding-top: 5px;
+	font-size: 35px;
+	color: white;
+}
+
+div.login-section h2{
+	margin: 0px 0px;
+	text-align: center;
+	color: white;
+}
+
+div.login-section p.txt{
+	margin: 5px 0px;
+	text-align: center;	
+	color: white;
+}
+
+div.login-section div.login-field{
+	background-color: white;
+	width: 70%;
+	margin-left: 35px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	padding: 15px 15px;
+}
+
+div.login-field input{
+	border: 1px solid blue;
+	padding: 8px 10px;
+	border-radius: 5px;
+	margin-bottom:15px;
+	width: 92%;
+}
+
+div.login-field button{
+	border: 1px solid blue;
+	padding: 8px 10px;
+	border-radius: 5px;
+	width: 100%;
+	background-color: blue;
+	color: white;
+}
+div.login-field input.btn-login {
+	border: 1px solid blue;
+	padding: 8px 10px;
+	border-radius: 5px;
+	width: 100%;
+	background-color: blue;
+	color: white;
+}
+
+div.login-field button a, div.login-field button a:active, div.login-field button a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+div.login-section p.down{
+	width: 70%;
+	margin-left: 40px;
+	overflow: auto;
+	padding: 10px;
+	padding-bottom: 0px;
+	margin-bottom: 0px; 
+}
+
+div.login-section p.down a{
+	text-decoration:none;
+	color: white;
+}
+
+div.login-section p.down a.lft{
+	float: left;
+	color: white;
+}
+
+div.login-section p.down a.rgt{
+	float: right;
+	color: white;
+}
+
+/*--------------------------------------------------*/
+
+.menu {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    /* width: 0%; */
+    text-align: left;
+    border: none;
+	outline: none;
+
+	transition: 0.4s;
+		font-family: 'Flamenco', cursive;
+}
+.panel {
+    padding: 0 10px;
+    background-color:white;
+	max-height: 10;
+	color: #000000;
+	overflow: hidden;
+	
+}
+div.header{
+	position: fixed;
+	z-index: 9;
+	left: 0px;
+	top: 0px;
+	overflow: auto;
+	background-color: white;
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid silver;
+}
+
+div.header div.left{
+	color: blue;
+	float: left;
+	padding: 15px 0px 0px 90px;
+}
+
+div.header form{
+	float: right;
+}
+
+div.header form input{
+	padding: 10px 5px;
+	margin-top: 6px;
+	border: 1px solid blue;
+	color: blue;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+div.header form button{
+	text-transform: uppercase;
+	padding: 10px 5px;
+	background-color: blue;
+	color: white;
+	border: 1px solid blue;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+#items-list div{
+	height: 250px;
+	cursor: pointer;
+	width:350px;
+	margin-left: 20px;
+	 /* padding:20px; */
+	 border: 1px solid #333;
+	display:inline-block;
+	margin-top: 20px;
+	background: #222222;
+	background-image: "assets/images/food.jpg";
+	color: white;
+	text-align:center;
+	}
+	
+
+div.header div.right{
+	float: right;
+}
+
+div.header div.right ul{
+	list-style: none;
+	margin: 17px 90px 0px 0px;
+	padding-left: 0px;
+}
+
+div.header div.right ul li{
+	display: inline;
+	margin-left: 15px;
+	padding: 5px 5px 15px 5px;
+}
+
+div.header div.right ul li.active, div.header div.right ul li.active:hover{
+	border-bottom: 5px solid blue;
+	padding-bottom: 10px;
+}
+
+div.header div.right ul li a, div.header div.right ul li a:active, div.header div.right ul li a:hover{
+	color: blue;
+	text-decoration: none;
+}
+
+div.content{
+	background-color: #E7E8ED;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+div.content div.info{
+	padding-top: 50px;
+	width: 80%;
+}
+
+div.content div.info img{
+	position: fixed;
+	width: 91.2%;
+	margin-left: 5%;
+	height: 50%;
+}
+
+div.content div.info .content-infomation{
+	position: absolute;
+	margin-top: 13%;
+	background-color: white;
+	border: 1px solid silver;
+	z-index: 8;
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 30px;
+	overflow: auto;
+	padding: 15px;
+}
+
+div.content-infomation div.left-side{
+	float: left;
+	/*background-color: red;*/
+	width: 70%;
+}
+
+div.content-infomation div.left-side h2{
+	margin: 0px 0px 7px 0px;
+}
+
+div.content-infomation div.left-side form input{
+	width: 97%;
+	padding: 10px 5px;
+	border-radius: 5px;
+	border: 1px solid blue;
+	margin-bottom: 15px;
+}
+
+div.content-infomation div.left-side form textarea{
+	width: 97%;
+	border-radius: 5px;
+	height: 200px;
+	padding: 10px 5px;
+	border: 1px solid blue;
+}
+
+div.content-infomation div.left-side form button{
+	margin-top: 10px;
+	padding: 8px 10px;
+	border-radius: 10px;
+	border: 1px solid blue;
+	background-color: blue;
+	color: white;
+	margin-bottom: 10px;
+}
+
+div.content-infomation div.left-side div.qn{
+	width: 99%;
+	padding: 10px;
+}
+
+div.content-infomation div.left-side div.qn a{
+	text-decoration: none;
+	color: black;
+}
+
+div.content-infomation div.left-side div.qn a:hover{
+	text-decoration: none;
+	color: blue;
+}
+
+div.qns{
+	margin-bottom:15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid silver;
+	padding-right: 15px;
+}
+
+div.qns p{
+	margin: 0px 0px;
+	font-weight: normal;
+}
+
+div.qns h3{
+	margin: 10px 0px;
+}
+
+div.content-infomation div.right-side{
+	float: right;
+	width: 30%;
+}
+
+div.content-infomation div.right-side h4{
+	text-transform: uppercase;
+	margin-left: 17px;
+}
+
+div.content-infomation div.right-side .qns-cont .cont{
+	width: 100%;
+	overflow: auto;
+	margin-bottom: 15px;
+}
+
+div.content-infomation div.right-side .qns-cont .cont img{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	float: left;
+}
+
+div.content-infomation div.right-side .qns-cont .cont p{
+	font-weight: normal;
+	float: left;
+	width: 290px;
+	margin: 0px 0px 0px 5px;
+}
+
+h2.ans-title{
+	text-transform: uppercase;
+}
+
+div.answer-container{
+	background-color: #efefef;
+	padding: 15px;
+}
+
+div.answer-container div.ans{
+	padding: 10px;
+	border-bottom: 1px solid silver;
+}
+
+div.answer-container div.ans h3{
+	margin: 0px 0px 0px 0px;
+}
+
+div.answer-container div.ans p{
+	font-weight: normal;
+	margin-top: 0px;
+}
+
+@media (min-width: 360px) and (max-width:640px){
+	div.header{
+		overflow: auto;
+	}
+
+	div.header div.left{
+		float: left;
+		padding-left: 0px;
+		font-size: 10px;
+	}
+
+	div.header div.right{
+		float: right;
+		width: 230px;
+		font-size: 10px;
+	}
+
+	div.header div.right ul{
+		margin:0px;
+		padding-top: 15px;
+	}
+
+	div.header div.right ul li{
+		margin-left: 3px;
+	}
+
+	div.header form{
+		display: none;
+	}
+
+	div.content-infomation div.left-side {
+		width: 100%;
+	}
+
+	div.content-infomation div.left-side form input{
+		width: 90%;
+	}
+	
+	div.content-infomation div.left-side form textarea{
+		width: 90%;
+	}
+	div.content-infomation div.left-side h2 {
+		font-size: 15px;
+	}
+
+	div.qns p {
+		font-size: 10px;
+	}
+
+	div.content-infomation div.right-side{
+		width: 100%;
+	}
+
+	div.content-infomation div.right-side .qns-cont .cont p {
+		width: 197px;
+		font-size: 15px;
+	}
+}
