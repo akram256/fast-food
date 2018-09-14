@@ -4,6 +4,8 @@ This is an application for online food delivery
 
 Travis badge    [![Build Status](https://travis-ci.org/akram256/fast-food.svg?branch=API)](https://travis-ci.org/akram256/fast-food)
 
+coveralls        [![Coverage Status](https://coveralls.io/repos/github/akram256/fast-food/badge.svg?branch=API)](https://coveralls.io/github/akram256/fast-food?branch=API)
+
 ***Features***
  * User can fetch all orders.
  * User can fetch a specific order.
