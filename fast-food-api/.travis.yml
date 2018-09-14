@@ -10,6 +10,6 @@ script:
 - coverage
 - coveralls
 - coverage report
-# after_success:
+# after_success:.....
 # - coveralls
 
