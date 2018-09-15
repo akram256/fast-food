@@ -64,13 +64,15 @@ class UsersOrders:
            response: dictionary
         """
         if order_id:
-        # update_order_id = [
             for order in UsersOrders.orders:
                 if order.__dict__['order_id'] == order_id:
                     order_jason = request.get_json ()   
                     order.__dict__['user_name'] = order_jason['user_name']
                     order.__dict__['order'] = order_jason['order']
-                    # order.__dict__['order status'] = some_jason['order_status']
+                    
                     return {'Updated order': [ order.__dict__
                             for order in UsersOrders.orders
                             if order.__dict__['order_id'] == order_id]}
+                            
+                
+                   

@@ -40,6 +40,12 @@ class GetOrder(MethodView):
             return jsonify(UsersOrders.post_an_order(request.json['user_name'],
                                                      request.json['order']))
     @staticmethod
-    def put(order_id ):
-
+    def put(order_id):
+        """
+           post method for puts requests
+           param: route /api/orders/<int:order_id>
+           response: json data
+        """
+        
         return jsonify({'Updated order': UsersOrders.put_an_order(order_id)})
+        

@@ -1,4 +1,6 @@
 """ Module for orders"""
+from datetime import datetime
+
 class Order():
     """
         Class defines the order atributes
@@ -9,3 +11,4 @@ class Order():
         self.user_name = user_name
         self.order = order
         self.order_status = "pending"
+        self.order_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
