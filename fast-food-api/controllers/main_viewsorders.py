@@ -36,7 +36,15 @@ class GetOrder(MethodView):
         if order_id is None:
             keys = ("user_name", "order")
             if not set(keys).issubset(set(request.json)):
-                return jsonify({'New order ': 'Your request has Empty feilds'}), 400
+                return jsonify({'New order': 'Your request has Empty feilds'}), 400
+
+            if request.json['user_name']=="":
+                return jsonify({"user_name": 'User_name missing, please enter User-name'}),400
+            if request.json['order']=="":
+                return jsonify({"order": 'Order missing, please enter Order'}),400
+            if not isinstance(request.json["order"],str):
+                return jsonify({'message':'order should be a string'}),400
+
             return jsonify(UsersOrders.post_an_order(request.json['user_name'],
                                                      request.json['order']))
     @staticmethod
