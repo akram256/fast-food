@@ -19,7 +19,7 @@ enum34==1.1.6
 Flask==1.0.2
 Flask-Cors==3.0.6
 funcsigs==1.0.2
-gunicorn==19.8.1
+gunicorn==19.9.0
 lockfile==0.12.2
 lz4==0.7.0
 MarkupSafe==1.0
