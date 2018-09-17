@@ -71,7 +71,7 @@ class UsersOrders:
                     order.__dict__['order'] = order_jason['order']
                     return {'Updated order': [ order.__dict__
                             for order in UsersOrders.orders
-                            if order.__dict__['order_id'] == order_id]}
+                    ]}
                             
                 
                    
