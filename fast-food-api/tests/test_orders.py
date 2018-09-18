@@ -19,7 +19,7 @@ class TestViews(unittest.TestCase):
         self.client = APP.test_client
     def test_fetch_all_orders(self):
         """
-           Method for tesing the get function which returns all orders
+           Method for testing the get function which returns all orders
         """
         result = self.client().get('api/v1/orders')
         respond = json.loads(result.data.decode("utf8"))
@@ -29,7 +29,7 @@ class TestViews(unittest.TestCase):
 
     def test_get_an_order(self):
         """
-            Method for tesing the get function which returns one order
+            Method for testing the get function which returns one order
         """
         result = self.client().get('api/v1/orders/17')
         result2 = self.client().get('api/v1/orders/a')
@@ -37,11 +37,19 @@ class TestViews(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
         self.assertEqual(result2.status_code, 404)
         self.assertIsInstance(respond, dict)
-
+    
+    def test_when_no_order(self):
+        """
+            Method for testing the get function which returns an error message when no orders
+        """
+        result = self.client().get('')
+        self.assertTrue(['Orders'], 'No orders available at the moment, Please                                        make an Order')
+        self.assertEqual(result.status_code, 404)
+       
 
     def test_post_an_order(self):
         """
-            Method for tesing the post function which posts an order
+            Method for testing the post function which posts an order
         """
         result = self.client().post('api/v1/orders',
                                     content_type="application/json",
@@ -56,7 +64,7 @@ class TestViews(unittest.TestCase):
 
     def test_put_an_order(self):
         """
-            Method for tesing the post function which updates an order
+            Method for testing the post function which updates an order
         """
         result1 = self.client().put('api/v1/orders/1',
                                     content_type="application/json",
@@ -75,18 +83,24 @@ class TestViews(unittest.TestCase):
         self.assertTrue(result1.json["Updated order"])
         self.assertEqual(result2.status_code, 200)
         self.assertTrue(result2.json["Updated order"])
+
     def test_inputs(self):
+        """
+            Method for testing the wrong post in-puts
+        """
         result = self.client().post('api/v1/orders',
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18
                                                          )))
         result_response = json.loads(result.data.decode("utf8"))
-        print(result_response)
         self.assertTrue(result_response['New order'], 'Your request has empty fields')
         self.assertTrue(result.content_type, 'application/json')
         self.assertEqual(result.status_code, 400)
 
     def test_input_order(self):
+        """
+            Method for testing the post function which inputs empty order
+        """
         result = self.client().post('api/v1/orders',
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="Akram",
@@ -98,6 +112,9 @@ class TestViews(unittest.TestCase):
         self.assertEqual(result.status_code, 400)
 
     def test_input_user_name(self):
+        """
+            Method for tesing the post function which inputs empty user_name
+        """
         result = self.client().post('api/v1/orders',
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="",
