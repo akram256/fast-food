@@ -39,6 +39,9 @@ class GetOrder(MethodView):
                 return jsonify({'New order': 'Your request has Empty feilds'}), 400
 
             if request.json['user_name']=="":
+                
+                # if request.json['order']=="":
+                #     return jsonify({"order": 'Order missing, please enter Order'}),400
                 return jsonify({"user_name": 'User_name missing, please enter User-name'}),400
             if request.json['order']=="":
                 return jsonify({"order": 'Order missing, please enter Order'}),400
