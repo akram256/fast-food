@@ -38,10 +38,7 @@ class GetOrder(MethodView):
             if not set(keys).issubset(set(request.json)):
                 return jsonify({'New order': 'Your request has Empty feilds'}), 400
 
-            if not request.json['user_name']:
-                
-                # if request.json['order']=="":
-                #     return jsonify({"order": 'Order missing, please enter Order'}),400
+            if not GetOrder.check_empty(request.json['user_name']):
                 return jsonify({"user_name": 'User_name missing, please enter User-name'}),400
             if request.json['order']=="":
                 return jsonify({"order": 'Order missing, please enter Order'}),400
@@ -59,4 +56,8 @@ class GetOrder(MethodView):
         """
         
         return jsonify({'Updated order': UsersOrders.put_an_order(order_id)})
-        
+    @staticmethod
+    def check_empty(data_check):
+        if data_check:
+            return True
+        return False
