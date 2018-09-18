@@ -38,7 +38,7 @@ class GetOrder(MethodView):
             if not set(keys).issubset(set(request.json)):
                 return jsonify({'New order': 'Your request has Empty feilds'}), 400
 
-            if request.json['user_name']=="":
+            if not request.json['user_name']:
                 
                 # if request.json['order']=="":
                 #     return jsonify({"order": 'Order missing, please enter Order'}),400
