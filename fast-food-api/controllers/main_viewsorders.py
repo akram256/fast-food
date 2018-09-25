@@ -47,7 +47,7 @@ class GetOrder(MethodView):
                 return jsonify({'message':'order should be a string'}),400
 
             if UsersOrders.exist_order(request.json['user_name'], request.json['order'] ):
-                return jsonify({"Alert":'wait order is being processed, You cant order twice'})
+                return jsonify({'Alert':'wait order is being processed, You cant order twice'})
 
 
 

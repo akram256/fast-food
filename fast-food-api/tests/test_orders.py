@@ -55,7 +55,7 @@ class TestViews(unittest.TestCase):
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="Akram",
                                                          order=
-                                                         "chips and chicken")))
+                                                         "chips and chicken",quantity=1)))
         respond = json.loads(result.data.decode("utf8"))
         self.assertIn('New order', respond)
         self.assertIsInstance(respond, dict)
@@ -105,7 +105,7 @@ class TestViews(unittest.TestCase):
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="Akram",
                                                          order=
-                                                         "")))
+                                                         "",quantity=1)))
         result_response = json.loads(result.data.decode())
         self.assertTrue(result_response['order'], 'Order missing, please enter Order')
         self.assertTrue(result.content_type, 'application/json')
@@ -119,9 +119,39 @@ class TestViews(unittest.TestCase):
                                     content_type="application/json",
                                     data=json.dumps(dict(order_id=18, user_name="",
                                                          order=
-                                                         "All food and beef")))
+                                                         "All food and beef",quantity=1)))
         result_response = json.loads(result.data.decode())
         self.assertTrue(result_response['user_name'], 'user_name missing, please enter                                    user_name')
         self.assertTrue(result.content_type, 'application/json')
         self.assertEqual(result.status_code, 400)
         
+    def test_exist_order(self):
+        """
+            Method for testing the post function for whether order exist 
+        """
+        result = self.client().post('api/v1/orders',
+                                    content_type="application/json",
+                                    data=json.dumps(dict(order_id=18, user_name="akram",
+                                                         order=
+                                                         "All food and beef",quantity=1)))
+    
+        result2 = self.client().post('api/v1/orders',
+                                    content_type="application/json",
+                                    data=json.dumps(dict(order_id=18, user_name="akram",
+                                                         order=
+                                                         "All food and beef",quantity=1)))
+        result_response = json.loads(result.data.decode("utf8"))
+        result2_response = json.loads(result.data.decode("utf8"))
+        self.assertTrue(result.content_type, 'application/json')
+        self.assertEqual(result.status_code, 200)
+        # self.assertTrue(result2_response['Alert'], 'wait order is being processed, You cant order twice')
+        self.assertEqual(result2.status_code, 200)
+
+    def test_delete_an_order(self):
+        """
+            Method for testing the delete function which returns one order
+        """
+        result = self.client().delete('api/v1/orders/17')
+        respond = json.loads(result.data.decode("utf8"))
+        self.assertEqual(result.status_code, 200)
+        self.assertIsInstance(respond, dict)
