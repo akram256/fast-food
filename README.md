@@ -4,7 +4,7 @@ This is an application for online food delivery
 
 Travis badge    [![Build Status](https://travis-ci.org/akram256/fast-food.svg?branch=API)](https://travis-ci.org/akram256/fast-food)
 
-coveralls        [![Coverage Status](https://coveralls.io/repos/github/akram256/fast-food/badge.svg?branch=API)](https://coveralls.io/github/akram256/fast-food?branch=API)
+coveralls    [![Coverage Status](https://coveralls.io/repos/github/akram256/fast-food/badge.svg?branch=API)](https://coveralls.io/github/akram256/fast-food?branch=API)
 
 code Climate      [![Maintainability](https://api.codeclimate.com/v1/badges/cfc59af57c8c90eec6d4/maintainability)](https://codeclimate.com/github/akram256/fast-food/maintainability)
 
