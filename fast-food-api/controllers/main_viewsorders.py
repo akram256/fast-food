@@ -33,11 +33,12 @@ class GetOrder(MethodView):
            param: route /api/orders
            response: json data
         """
+        
         if order_id is None:
-            keys = ("user_name", "order")
+            keys = ("user_name", "order","quantity")
             if not set(keys).issubset(set(request.json)):
                 return jsonify({'New order': 'Your request has Empty feilds'}), 400
-
+    
             if not GetOrder.check_empty(request.json['user_name']):
                 return jsonify({"user_name": 'User_name missing, please enter User-name'}),400
             if request.json['order']=="":
@@ -45,7 +46,13 @@ class GetOrder(MethodView):
             if not isinstance(request.json["order"],str):
                 return jsonify({'message':'order should be a string'}),400
 
+            if UsersOrders.exist_order(request.json['user_name'], request.json['order'] ):
+                return jsonify({"Alert":'wait order is being processed, You cant order twice'})
+
+
+
             return jsonify(UsersOrders.post_an_order(request.json['user_name'],
+                                                     request.json['quantity'],
                                                      request.json['order']))
     @staticmethod
     def put(order_id):
@@ -69,7 +76,7 @@ class GetOrder(MethodView):
            param: route /api/orders/<int:order_id>
            response: json data
         """
-        if order_id == order_id:
+        if order_id in [order.__dict__ for order in UsersOrders.orders]:
             return jsonify({'Order': UsersOrders.delete_an_order(order_id)})
         return jsonify({"Order":"No order to delete"})
         

@@ -43,7 +43,7 @@ class UsersOrders:
             if order.__dict__['order_id'] == order_id]}
 
     @staticmethod
-    def post_an_order(user_name, order):
+    def post_an_order(user_name, order, quantity):
         """
            method for posting orders
            params: user_name and order
@@ -52,10 +52,14 @@ class UsersOrders:
         
         size = [order.__dict__ for order in UsersOrders.orders]
         counter = len(size) + 1
-        add_order = Order(counter, user_name, order)
+        quantity 
+        add_order = Order(counter, user_name, order, quantity)
         UsersOrders.orders.append(add_order)
+        
         return {'New order': [
             order.__dict__ for order in UsersOrders.orders]}
+      
+        
 
     @staticmethod
     def put_an_order(order_id):
@@ -86,5 +90,10 @@ class UsersOrders:
                 UsersOrders.orders.pop(num)
                 return {"Order":"order has been succesfully deleted"}
             return {"Order":"No order to delete"}
-                      
+    @staticmethod
+    def exist_order(user_name, order):
+        for item in UsersOrders.orders:
+            if user_name==item.user_name and order==item.order:
+                return True
+        return False
                    
