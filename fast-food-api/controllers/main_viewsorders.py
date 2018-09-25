@@ -61,3 +61,16 @@ class GetOrder(MethodView):
         if data_check:
             return True
         return False
+
+    @staticmethod
+    def delete(order_id):
+        """
+           post method for deletes requests
+           param: route /api/orders/<int:order_id>
+           response: json data
+        """
+        if order_id == order_id:
+            return jsonify({'Order': UsersOrders.delete_an_order(order_id)})
+        return jsonify({"Order":"No order to delete"})
+        
+        

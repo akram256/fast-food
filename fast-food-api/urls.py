@@ -22,3 +22,5 @@ class Urls():
                            view_func=order_post, methods=['POST',])
         order.add_url_rule('/api/v1/orders/<int:order_id>', 
                             view_func=order_post, methods=['PUT',])
+        order.add_url_rule('/api/v1/orders/<int:order_id>', 
+                            view_func=order_post, methods=['DELETE',])
