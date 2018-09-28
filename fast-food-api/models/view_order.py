@@ -86,7 +86,6 @@ class UsersOrders:
         
         for num, order in enumerate (UsersOrders.orders):
             if order.__dict__['order_id'] == order_id:
-                # remove_order= Order(order_id)
                 UsersOrders.orders.pop(num)
                 return {"Order":"order has been succesfully deleted"}
             return {"Order":"No order to delete"}

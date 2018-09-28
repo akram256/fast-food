@@ -76,8 +76,8 @@ class GetOrder(MethodView):
            param: route /api/orders/<int:order_id>
            response: json data
         """
-        if order_id in [order.__dict__ for order in UsersOrders.orders]:
-            return jsonify({'Order': UsersOrders.delete_an_order(order_id)})
-        return jsonify({"Order":"No order to delete"})
+        # if order_id in [order.__dict__ for order in UsersOrders.orders]:
+        return jsonify({'Order': UsersOrders.delete_an_order(order_id)})
+        # return jsonify({"Order":"No order to delete"})
         
         
